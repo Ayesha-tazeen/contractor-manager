@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <div className="text-center mt-20">
-  <h1 className="text-5xl font-bold text-blue-600">
-    Frontend Ready 🚀
-  </h1>
-</div>
-
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   );
 }
 
