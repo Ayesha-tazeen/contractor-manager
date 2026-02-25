@@ -1,14 +1,36 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginForm from "./components/LoginForm";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import LandingPage from "./pages/LandingPage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import RoleBasedDashboard from "./routes/RoleBasedDashboard";
+import Profile from "./pages/ProfilePage";
+import ContractorDashboard from "./pages/ContractorDashboard";
 
-function App() {
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/profile" element={<Profile />} />
+        
+
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+            <RoleBasedDashboard />
+            </ProtectedRoute>
+          }
+        />
+         <Route path="/contractor-dashboard" element={<ContractorDashboard />} />
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

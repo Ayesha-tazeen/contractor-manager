@@ -1,0 +1,20 @@
+/* KEY: Make slick-list hide overflow */
+.slick-list {
+  overflow: hidden !important;
+}
+
+.slick-slide {
+  transition: transform 0.5s ease, z-index 0.5s ease, opacity 0.5s ease;
+}
+
+.slick-center .carousel-image {
+  transform: scale(1) translateY(-10px);
+  z-index: 30;
+  opacity: 1;
+}
+
+.slick-slide.slick-active:not(.slick-center) .carousel-image {
+  transform: scale(0.85) translateY(20px);
+  z-index: 10;
+ 
+}
