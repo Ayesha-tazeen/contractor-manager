@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import RoleBasedDashboard from "./routes/RoleBasedDashboard";
 import Profile from "./pages/ProfilePage";
 import ContractorDashboard from "./pages/ContractorDashboard";
+import ClientDashboard from "./pages/client/ClientDashboard";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           }
         />
          <Route path="/contractor-dashboard" element={<ContractorDashboard />} />
+        <Route path="/client-dashboard" element={<ClientDashboard />} />
         
       </Routes>
     </BrowserRouter>

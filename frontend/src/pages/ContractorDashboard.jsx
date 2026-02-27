@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../components/SideNavbar";
 import {
   FaProjectDiagram,
   FaChartBar,
@@ -9,6 +10,8 @@ export default function ContractorDashboard() {
   const navigate = useNavigate();
 
   return (
+    <div className="">
+      <Sidebar/>
     <div className="min-h-screen bg-gray-100 p-6 md:ml-16 mt-16 md:mt-0">
       
       {/* PAGE TITLE */}
@@ -83,6 +86,7 @@ export default function ContractorDashboard() {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }
